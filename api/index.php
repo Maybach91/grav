@@ -1,5 +1,5 @@
 <?php
-
+ phpinfo();
 /**
  * @package    Grav.Core
  *
