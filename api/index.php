@@ -17,8 +17,6 @@ if (version_compare($ver = PHP_VERSION, $req = GRAV_PHP_MIN, '<')) {
 }
 
 if (PHP_SAPI === 'cli-server') {
-    var_dump(PHP_SAPI);
-    var_dump($_SERVER);
     $symfony_server = strpos(getenv('_'), 'symfony') !== false;
     if (!isset($_SERVER['PHP_CLI_ROUTER']) && !$symfony_server) {
        // die("PHP webserver requires a router to run Grav, please use: <pre>php -S {$_SERVER['SERVER_NAME']}:{$_SERVER['SERVER_PORT']} system/router.php</pre>");
@@ -26,7 +24,7 @@ if (PHP_SAPI === 'cli-server') {
 }
 
 // Ensure vendor libraries exist
-$autoload = __DIR__ . '/vendor/autoload.php';
+$autoload = __DIR__ . '/../vendor/autoload.php';
 if (!is_file($autoload)) {
     die('Please run: <i>bin/grav install</i>');
 }
